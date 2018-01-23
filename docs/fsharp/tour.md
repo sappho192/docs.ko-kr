@@ -18,119 +18,118 @@ ms.lasthandoff: 10/18/2017
 ---
 # <a name="tour-of-f"></a>F # 둘러보기 #
 
-F #에 대 한 자세한 내용은 읽기 및 쓰기 F # 코드는 가장 좋은 방법은 합니다.  이 문서는 역할을 F # 언어의 주요 기능 중 몇 가지를 안내 하 고 컴퓨터에서 실행할 수 있는 몇 가지 코드 조각을 사용 하면 됩니다.  개발 환경 설정에 대 한 자세한 내용은, 체크 아웃 [시작](tutorials/getting-started/index.md)합니다.
+F#을 가장 잘 배울 수 있는 방법은 직접 F# 코드를 읽고 쓰는 것입니다. 이 문서는 F# 언어의 주요 기능 중 몇 가지를 안내하고 컴퓨터에서 실행할 수 있는 몇 가지 코드 조각을 제공합니다. 개발 환경 설정에 대한 자세한 내용은 [F# 시작](tutorials/getting-started/index.md)을 참고하세요.
 
-두 가지 기본 개념인 F #: 함수 및 형식이 있습니다.  이 둘러보기가 개념에 해당 하는 언어의 기능을 강조 됩니다.
+F#의 함수 및 자료형에는 두 가지 기본 개념이 있습니다. 이 문서는 두 개념에 해당하는 언어의 기능들을 강조합니다.
 
-## <a name="how-to-run-the-code-samples"></a>코드 샘플을 실행 하는 방법
+## <a name="how-to-run-the-code-samples"></a>코드 샘플을 실행하는 방법
 
 >[!NOTE]
-코드 샘플을 실행 하기 위한 두 가지 옵션은 [시도 F #](http://www.tryfsharp.org/Create) (Silverlight가 필요) 및 [Azure 전자 필기장에 대 한 F #](https://notebooks.azure.com/Microsoft/libraries/fsharp/html/FSharp%20for%20Azure%20Notebooks.ipynb) Microsoft Azure에서.
+코드 샘플을 실행하기 위한 두 페이지는 [F# 체험하기](http://www.tryfsharp.org/Create) (Silverlight가 필요)와 Microsoft Azure에서 제공하는 [Azure 전자필기장을 위한 F#](https://notebooks.azure.com/Microsoft/libraries/fsharp/html/FSharp%20for%20Azure%20Notebooks.ipynb)입니다.
 
-이 코드 샘플을 실행 하는 가장 빠른 방법은 사용 하는 [F # Interactive](tutorials/fsharp-interactive/index.md)합니다.  방금 복사/붙여넣기 코드 예제를 실행할 수 있습니다.  또는 프로젝트를 컴파일하고 콘솔 응용 프로그램 코드를 실행 하려면를 설정할 수 있습니다.  참조는 [시작](./get-started/index.md) 자세한 섹션.
+아래의 코드 샘플을 실행하는 가장 빠른 방법은 [F# Interactive](tutorials/fsharp-interactive/index.md)을 이용하는 것입니다. 그냥 코드 예제를 해당 페이지에서 복사/붙여넣기하여 실행할 수 있습니다. 또는 비주얼 스튜디오에서 F# 프로젝트를 만들고 컴파일하여 콘솔 응용 프로그램 코드를 실행할 수 있습니다. [시작](./get-started/index.md)섹션을 참조하세요.
 
-## <a name="functions-and-modules"></a>함수 및 모듈
+## <a name="functions-and-modules"></a>함수와 모듈
 
-F # 프로그램의 가장 기본적인 조각 ***함수*** 구조로 구성 ***모듈***합니다.  [함수](language-reference/functions/index.md) 출력을 생성 하는 입력에 대해 작업을 수행 하 고 아래에 구성 됩니다 [모듈](language-reference/modules.md)는 F #에서 항목을 그룹화 하는 기본 방법입니다.  사용 하 여 정의 된는 [ `let` 바인딩](language-reference/functions/let-bindings.md), 함수 이름을 지정 하 고 해당 인수를 정의 합니다.
+모든 F# 프로그램의 가장 기본적인 요소는 ***함수***들로 구성된 ***모듈***들입니다. [함수](language-reference/functions/index.md)는 입력을 받아 출력을 만드는 역할을 담당하고, 이 함수들은 목적에 맞게 모여 [모듈](language-reference/modules.md)이 됩니다. 이것은 F#에서 임의의 항목들을 그룹화하는 기본적인 방법입니다. 이들은 [ `let` 바인딩](language-reference/functions/let-bindings.md)을 이용하여 정의되며, 이 정의를 통해 함수의 이름을 정하고 인자들을 정의합니다.
 
 [!code-fsharp[BasicFunctions](../../samples/snippets/fsharp/tour.fs#L101-L133)]
 
-`let`바인딩은 다른 언어의 변수과 유사한 이름을에 연결한 값도 있습니다.  `let`바인딩은 ***변경할 수 없는*** 기본적으로 의미 하는 값 또는 함수의 이름에 바인딩된 후 변경할 수는 현재 위치입니다.  이 알고리즘은 변수는 다른 언어의 반대 ***변경 가능한***, 즉 해당 값에서에서 변경할 수 있습니다 언제 든 시간입니다.  사용할 수는 변경할 수 있는 바인딩을 필요 하면 `let mutable ...` 구문입니다.
+또한 `let`바인딩은 다른 언어들에서의 변수 개념처럼 값을 이름에 연결하는 방법입니다.  `let`바인딩으로 연결된 값 또는 함수는 기본적으로 ***변경할 수 없습니다***. 이것은 다른 언어에서 변수들이 언제든 값을 ***변경 가능한*** 점과 반대됩니다. 만약 값을 바꿀 수 있도록 바인딩을 하고 싶다면 `let mutable ...` 구문을 쓰면 됩니다.
 
 [!code-fsharp[Immutability](../../samples/snippets/fsharp/tour.fs#L75-L94)]
 
 ## <a name="numbers-booleans-and-strings"></a>숫자, 부울 및 문자열
 
-.NET 언어로 F #에서는 동일한 기본 [기본 형식](language-reference/primitive-types.md) .NET에 존재 합니다.
-
-다양 한 숫자 형식은 F #에서 표현 되는 다음과 같습니다.
+F#은 .NET 언어이기 때문에 .NET에 존재하는 [기본 타입](language-reference/primitive-types.md)을 지원합니다.  
+F#에서 표현되는 다양한 숫자 타입은 아래와 같습니다.
 
 [!code-fsharp[Numbers](../../samples/snippets/fsharp/tour.fs#L49-L68)]
 
-다음 부울 값은 하 고 다음과 같은 기본 조건부 논리를 수행 합니다.
+아래 코드를 통해 Boolean 타입의 값들과 이를 이용한 기본적인 논리 연산을 확인할 수 있습니다.
 
 [!code-fsharp[Bools](../../samples/snippets/fsharp/tour.fs#L142-L152)]
 
-다음은 어떤 basic [문자열](language-reference/strings.md) 조작 같습니다:
+다음 코드는 기본적인 [문자열](language-reference/strings.md)조작을 보여줍니다.
 
 [!code-fsharp[Strings](../../samples/snippets/fsharp/tour.fs#L158-L180)]
 
 ## <a name="tuples"></a>튜플
 
-[튜플](language-reference/tuples.md) F #에서 큰 문제가 됩니다.  이들은 값 자체 처리 될 수 있는 명명 되지 않은 되지만 순서가 지정 된 값의 그룹입니다.  다른 값에서 집계 된 값으로 볼 합니다.  함수에서 여러 값이 반환 또는 임시 게 편의 대 한 값 그룹화 편리 하 게 같은 다양 한 용도로 갖게 됩니다.
+[튜플](language-reference/tuples.md) F#의 강력한 기능 중 하나입니다. 이것은 익명의 정렬된 값들을 그룹으로 모아주며 이 그룹 자체가 하나의 값으로서 다뤄집니다. 튜플은 다양한 용도로 쓰일 수 있는데, 그 중 하나는 함수에서 여러 값들을 간단하게 반환하는 것이며 기타 여러 상황에서 유용하게 쓰입니다.
 
 [!code-fsharp[Tuples](../../samples/snippets/fsharp/tour.fs#L186-L203)]
 
-F # 4.1을 기준으로 만들 수도 있습니다 `struct` 튜플 합니다.  이러한도 완벽 하 게 상호 작용도 C# 7/Visual Basic 15 튜플을 `struct` 튜플:
+F# 4.1을 기준으로, `struct` 튜플도 만들 수 있습니다. 해당 자료형은 C#7/Visual Basic 15의 `struct` 튜플과 완전히 호환됩니다.  
 
 [!code-fsharp[Tuples](../../samples/snippets/fsharp/tour.fs#L205-L218)]
 
-때문에 유의 해야 `struct` 튜플은 값 형식, 튜플, 참조 하도록 암시적으로 변환할 수 없으므로 또는 그 반대의 경우도 마찬가지입니다.  명시적으로 참조 및 구조체 튜플 간에 변환 해야 합니다.
+유의해야 할 점은 `struct` 튜플은 값 타입이기 때문에 참조 튜플과 암시적으로 상호 변환될 수 없으므로 위 코드와 같이 명시적으로 변환해야 합니다.
 
 ## <a name="pipelines-and-composition"></a>파이프라인 및 구성
 
-연산자는 파이프 (`|>`, `<|`, `||>`, `<||`, `|||>`, `<|||`)와 컴퍼지션 연산자 (`>>` 및 `<<`) F #에서 데이터를 처리할 때 널리 사용 됩니다.  이러한 연산자는 유연한 방식 "파이프라인" 함수를 설정할 수 있는 함수입니다.  다음 예제에서는 간단한 기능 파이프라인 빌드를 이러한 연산자를 활용할 수 있습니다는 방법을 안내 합니다.
+파이프 연산자 (`|>`, `<|`, `||>`, `<||`, `|||>`, `<|||`)와 합성 연산자 (`>>` 및 `<<`)는 F#에서 데이터를 처리할 때 널리 사용됩니다. 이러한 연산자는 유연한 방법으로 함수의 "파이프라인"을 설정할 수 있습니다. 다음 예제는 이러한 연산자를 활용하여 간단한 기능을 하는 파이프라인을 만듭니다.
 
 [!code-fsharp[Pipelines](../../samples/snippets/fsharp/tour.fs#L227-L300)]
 
-만든 위의 샘플 목록 처리 함수를 첫 번째 클래스 기능을 포함 하 여 F #의 여러 기능을 사용 하 고 [부분 응용 프로그램](language-reference/functions/index.md#partial-application-of-arguments)합니다.  각 이러한 개념에 대 한 심층적 이해가, 다소 고급 될 수 있지만 명확 해야 얼마나 쉽게 파이프라인을 만들 때 데이터를 처리 하기 위해 함수를 사용할 수 있습니다.
+위의 코드는 리스트를 처리하는 함수를 포함하여 일급 객체 기능과 [인수의 부분 적용](language-reference/functions/index.md#partial-application-of-arguments)과 같은 F#의 여러 기능을 사용하고 있습니다. 각 이러한 개념에 대한 심층적 이해가 다소 어려울 수 있지만, 파이프라인을 만들 때 함수가 데이터를 처리 하기 위해 얼마나 쉽게 사용할 수 있는지를 명확하게 알아둬야 합니다.
 
 ## <a name="lists-arrays-and-sequences"></a>목록, 배열 및 시퀀스
 
-목록, 배열 및 시퀀스는 F # 핵심 라이브러리의 세 가지 기본 컬렉션 형식.
+리스트, 배열, 그리고 시퀀스는 F# 핵심 라이브러리의 세 가지 기본 컬렉션 타입입니다.
 
-[나열](language-reference/lists.md) 는 동일한 형식의 요소 정렬 되 고 변경할 수 없는 컬렉션입니다.  즉, 열거형, 하지만 임의 액세스 및 연결에 대 한 선택에 대 한 보관 경우 큰 있을 경우 단일 연결 목록은 합니다.  이이 달리 일반적으로 목록을 나타내는 단일 연결 목록을 사용 하지 않는 다른 인기 있는 언어의 목록입니다.
+[리스트](language-reference/lists.md)는 동일한 타입의 요소들로 이루어진, 내용을 변경할 수 없는(immutable) 정렬된 컬렉션입니다. 즉, 이것은 나열을 목적으로 한 단일 연결 리스트이지만 그렇기 때문에 리스트의 크기가 커질 수록 임의의 요소에 접근하거나 리스트끼리 이어 붙이는 작업의 속도는 느려집니다. 이와 달리 다른 인기 있는 언어에서의 리스트는 일반적으로 단일 연결 리스트로 구현되지 않습니다.
 
 [!code-fsharp[Lists](../../samples/snippets/fsharp/tour.fs#L309-L359)]
 
-[배열](language-reference/arrays.md) 은 고정 된 크기 *변경 가능한* 같은 형식의 요소 컬렉션입니다.  이들은 요소에 대 한 빠른 임의 액세스를 지원 하며 F # 나열 방금 연속 된 메모리 블록을 되기 때문에 보다 빠릅니다.
+[배열](language-reference/arrays.md)은 같은 타입의 요소를 담는 고정된 크기의 *변경 가능한* 컬렉션입니다. 이들은 요소에 대한 빠른 임의 액세스를 지원하며 F#의 리스트보다 빠른데 이는 연속된 메모리 공간을 이용하기 때문입니다.
 
 [!code-fsharp[Arrays](../../samples/snippets/fsharp/tour.fs#L368-L407)]
 
-[시퀀스](language-reference/sequences.md) 논리 일련의 요소는 동일한 유형의 모든 됩니다.  이들은 Lists와 Arrays, 모든 논리 일련의 요소에 "보기" 있을 수는 보다 일반적인 형식입니다.  또한 서식을 수 있기 때문에 ***지연***, 즉, 요소는 필요할 때만 계산할 수 있습니다.
+[시퀀스](language-reference/sequences.md)는 같은 타입의 요소들의 논리적인 집합입니다. 이것은 리스트나 배열보다 더 일반적인 타입으로, 당신의 관점을 요소들의 어떤 논리적인 집합으로든 만들어낼 수 있습니다. 시퀀스의 또다른 장점으로는 ***게으른*** 동작이 가능하여 요소들을 필요할 때만 가져와서 다룰 수 있다는 것입니다.
 
 [!code-fsharp[Sequences](../../samples/snippets/fsharp/tour.fs#L418-L452)]
 
 ## <a name="recursive-functions"></a>재귀 함수
 
-컬렉션 또는 시퀀스의 요소를 처리 합니다. 일반적으로 템플릿과 [재귀](language-reference/functions/index.md#recursive-functions) F #에서.  F #에 루프 및 명령형 프로그래밍 비교에 대 한 지원으로 재귀 것 보다 쉽게 정확성을 보장할 수 있기 때문에 좋습니다.
+F#에서 컬렉션 또는 시퀀스의 요소를 처리하는 작업은 일반적으로 [재귀](language-reference/functions/index.md#recursive-functions)를 이용합니다. F#이 반복문 및 명령형 프로그래밍을 지원하긴 하지만, 재귀를 이용하는것이 더 쉽게 정확성을 보장할 수 있기 때문에 권장됩니다.
 
 >[!NOTE]
-다음 예제에서는 패턴 일치를 통해 사용 하는 `match` 식입니다.  이 기본 구조가이 문서의 뒷부분에 나오는 다룹니다.
+다음 예제에서는 `match`를 이용해 패턴 매칭을 수행합니다. 이 기본 구조는 문서의 뒷부분에서 다룹니다.
 
 [!code-fsharp[RecursiveFunctions](../../samples/snippets/fsharp/tour.fs#L461-L500)]
 
-F #도 마무리 호출 최적화에 대 한 완벽 하 게 지원 있습니다 루프 구성으로 빠르게는 재귀 호출을 최적화할 수 있습니다.
+F# 또한 마무리 호출 최적화를 완전히 지원하는데, 이것은 재귀 호출을 최적화하여 반복문만큼 빠르게 돌아가도록 해줍니다.
 
-## <a name="record-and-discriminated-union-types"></a>기록 및 구별 된 공용 구조체 유형
+## <a name="record-and-discriminated-union-types"></a>기록 및 구별된 공용 구조체 타입
 
-기록 및 공용 구조체 유형은 F # 코드에서 사용 되는 두 가지 기본 데이터 형식 이며 일반적으로 F # 프로그램에서 데이터를 나타내는 가장 좋은 방법은 있습니다.  이렇게 이름을 바꾸면 클래스와 유사 하 다른 언어에서 주요 차이점 중 하나 이지만 구조적 같음 의미 체계가 있는 있습니다.  즉, "기본적 으로" 비슷합니다 일치는 간단 하 게-확인 하나는 다른 수와 같습니다.
+기록 및 공용 구조체 타입은 F# 코드에서 사용되는 두 가지 기본 데이터 타입이며, 일반적으로 F# 프로그램에서 데이터를 나타내는 가장 좋은 방법입니다. 비록 이들이 다른 언어의 클래스와 비슷해보이지만, 이 두 타입은 구조적 동등한 의미를 가진다는 것이 클래스와 차별되는 부분입니다. 즉, 이 둘은 "태생적으로" 비교 가능하고 동등한지의 여부는 직관적으로 가능합니다. 그냥 하나가 다른 하나와 같은지 비교만 하면 됩니다.
 
-[레코드](language-reference/records.md) 선택적 멤버 (예: 메서드)와 명명 된 값에 대 한 집계 됩니다.  C# 또는 Java에 잘 알고 있다면 다음 이러한 느끼지 것 POCOs 또는 POJOs-비슷한 방금 구조적으로 같은지 서 공식 절차입니다.
+[레코드](language-reference/records.md)는 이름이 있는 값들을 선택적 멤버(예: 메서드)와 함께 모은 것입니다. C# 또는 Java를 잘 알고 있다면 구조적으로 동등하고 규칙이 적다는 점에서 POCOs 또는 POJOs(Plain Old Java Object)와 비슷하다고 느끼실 겁니다. 
 
 [!code-fsharp[Records](../../samples/snippets/fsharp/tour.fs#L507-L559)]
 
-F # 4.1을 기준으로 나타낼 수도 있습니다 레코드로 `struct`s입니다.  이러한 용도로 `[<Struct>]` 특성:
+F# 4.1을 기준으로, 레코드를 `struct`들로 나타낼 수도 있습니다. 아래와 같이 `[<Struct>]` 속성을 이용하면 됩니다.
 
 [!code-fsharp[Records](../../samples/snippets/fsharp/tour.fs#L561-L568)]
 
-[구별 된 공용 구조체 (DUs)](language-reference/discriminated-unions.md) 의 명명 된 폼의 경우 숫자가 될 수 있는 값입니다.  데이터 형식에 저장 된 여러 고유 값 중 하나일 수 있습니다.
+[구별된 공용 구조체 (DUs)](language-reference/discriminated-unions.md)는 이름이 있는 폼이나 경우들의 갯수가 될 수 있는 값입니다. 데이터 타입에 저장된 타입은 여러 고유 값들 중 하나일 수 있습니다.
 
 [!code-fsharp[Unions](../../samples/snippets/fsharp/tour.fs#L575-L631)]
 
-DUs로 사용할 수도 있습니다 *단일 대/소문자 구별 된 공용 구조체*, 기본 형식 모델링 하는 도메인에 도움이 되도록 합니다.  종종 시간, 문자열 및 다른 기본 형식과 특정 한 의미를 제공 하므로 및를 표현 하기 위해 사용 됩니다.  그러나 데이터의 기본 표현만을 사용 하 여 실수로 잘못 된 값을 할당할 때 발생할 수 있습니다!  각 유형의 단일 사례의 공용 구조체의 고유 정보를 나타내는이 시나리오에서는 정확성을 적용할 수 있습니다.
+또한 DUs를 *단일 대/소문자 구별된 DUs*로 사용할 수도 있는데, 이로 인하여 기본 타입을 이용한 도메인 모델링에 도움이 될 수도 있습니다. 종종 시간, 문자열 및 다른 기본 타입들이 무언가를 대표하기 위해 사용되기 때문에 특별한 의미를 가지게 됩니다. 그러나 기본 데이터 형식만을 사용하면 실수로 잘못된 값을 할당할 수도 있습니다! 각 정보의 타입을 단일 대/소문자 구별된 DUs로 표현하면 그런 경우에 정확성을 높일 수 있습니다.
 
 [!code-fsharp[Unions](../../samples/snippets/fsharp/tour.fs#L633-L654)]
 
-위의 샘플에서 보여 주듯이에 단일 사례 구별 된 공용 구조체, 기본 값을 명시적으로 unwrap 해야 있습니다.
+위의 샘플에서 보여주듯이, 단일 대/소문자 구별된 DUs에서 값을 얻기 위해선 명시적으로 값들을 빼내야 합니다.
 
-또한 DUs 기능도 사용할 재귀 정의 트리, 기본적으로 재귀적 데이터를 쉽게 표현할 수 있습니다.  예를 들어 있는 이진 검색 트리를 표시 하는 방법 여기는 `exists` 및 `insert` 함수입니다.
+또한 DUs는 재귀 정의를 지원하는데, 이것으로 트리와 내재되어있는 재귀 데이터를 쉽게 표현할 수 있습니다. 예를 들어 아래 코드 예제를 통해 `exists` 및 `insert` 함수를 이용해 이진 검색 트리를 표시할 수 있습니다.
 
 [!code-fsharp[Unions](../../samples/snippets/fsharp/tour.fs#L656-L683)]
 
-DUs 데이터 형식에서 트리의 재귀 구조를 나타낼 수 있습니다, 때문에이 재귀 구조에 대 한 작동은 간단 하며 정확성을 보장 합니다.  아래와 같이 에서도 패턴 일치에서 지원 됩니다.
+DUs 데이터 타입을 이용해 트리의 재귀 구조를 나타낼 수 있기 때문에, 이 재귀 구조를 다루는 것은 직관적이며 정확성을 보장합니다. 아래와 같이 패턴 일치에서도 지원됩니다.
 
-또한 DUs로 나타낼 수 있습니다 `struct`와 s는 `[<Struct>]` 특성:
+또한 DUs는 `struct`들과 `[<Struct>]` 속성으로 나타낼 수 있습니다.
 
 [!code-fsharp[Unions](../../samples/snippets/fsharp/tour.fs#L685-L696)]
 
@@ -143,7 +142,7 @@ DUs 데이터 형식에서 트리의 재귀 구조를 나타낼 수 있습니다
 
 ## <a name="pattern-matching"></a>패턴 일치
 
-[패턴 일치](language-reference/pattern-matching.md) 은 F # 언어는 기능 정확성 F # 형식에 대해 작업을 사용 하도록 설정 합니다.  위의 샘플에서 이와 많은 양의 `match x with ...` 구문입니다.  이 구조를 사용 하면 컴파일러에서 일치 하는 철저 한 패턴을 통해 데이터 형식을 사용 하는 경우 모든 가능한 사례 수에 대 한 계정 해도 데이터 형식의 "shape" 이해할 수 있습니다.  올바른지 만큼 강력한 이며 컴파일 타임에 런타임 문제가 리라 어떤 "리프트"를 영리 하 게 사용할 수 있습니다.
+[패턴 일치](language-reference/pattern-matching.md) 은 F # 언어는 기능 정확성 F # 타입에 대해 작업을 사용 하도록 설정 합니다.  위의 샘플에서 이와 많은 양의 `match x with ...` 구문입니다.  이 구조를 사용 하면 컴파일러에서 일치 하는 철저 한 패턴을 통해 데이터 타입을 사용 하는 경우 모든 가능한 사례 수에 대 한 계정 해도 데이터 타입의 "shape" 이해할 수 있습니다.  올바른지 만큼 강력한 이며 컴파일 타임에 런타임 문제가 리라 어떤 "리프트"를 영리 하 게 사용할 수 있습니다.
 
 [!code-fsharp[PatternMatching](../../samples/snippets/fsharp/tour.fs#L705-L739)]
 
@@ -151,25 +150,25 @@ DUs 데이터 형식에서 트리의 재귀 구조를 나타낼 수 있습니다
 
 [!code-fsharp[PatternMatching](../../samples/snippets/fsharp/tour.fs#L741-L759)]
 
-사용 하는 단어로 것은 `_` 패턴입니다.  로 알려져는 [와일드 카드 패턴](language-reference/pattern-matching.md#wildcard-pattern), "기능이 문제가 있습니다" 방법도 방법입니다.  실수로 철저 한 패턴 일치를 무시 하 고 더 이상 사용 하 여 주의 하지 않은 경우 컴파일 타임 강요에서 이점을 얻을 수 편리 하지만 `_`합니다.  분해 된 형식의 특정 부분에 대 한 중요 하지 않으면 할 경우 유용 때 패턴을 일치 또는 마지막 절 식과 일치 하는 패턴의 의미 있는 모든 사례를 열거 했습니다.
+사용 하는 단어로 것은 `_` 패턴입니다.  로 알려져는 [와일드 카드 패턴](language-reference/pattern-matching.md#wildcard-pattern), "기능이 문제가 있습니다" 방법도 방법입니다.  실수로 철저 한 패턴 일치를 무시 하 고 더 이상 사용 하 여 주의 하지 않은 경우 컴파일 타임 강요에서 이점을 얻을 수 편리 하지만 `_`합니다.  분해 된 타입의 특정 부분에 대 한 중요 하지 않으면 할 경우 유용 때 패턴을 일치 또는 마지막 절 식과 일치 하는 패턴의 의미 있는 모든 사례를 열거 했습니다.
 
 [활성 패턴](language-reference/active-patterns.md) 패턴 일치를 사용 하는 다른 강력한 구성 됩니다.  패턴 일치 호출 사이트에서 분해 하는 사용자 지정 양식, 입력된 데이터를 분할할 수 있습니다 수 있습니다.  또한 매개 변수화 할 수, 되므로 다음 파티션 함수로 정의 합니다.  확장 활성 패턴을 지원 하기 위해 앞의 예제는 다음과 같습니다.
 
 [!code-fsharp[ActivePatterns](../../samples/snippets/fsharp/tour.fs#L761-L783)]
 
-## <a name="optional-types"></a>선택적 형식
+## <a name="optional-types"></a>선택적 타입
 
 구별 된 공용 구조체 유형의 특수 한 사례는는 F # 핵심 라이브러리의 부분이 아니라는 유용한 옵션 종류입니다.
 
-[옵션 종류](language-reference/options.md) 는 두 가지 경우 중 하나를 나타내는 형식이:는 값 또는 전혀 nothing입니다.  값 수 또는 특정 작업으로 발생 하지 않을 수 있는 모든 시나리오에서 사용 됩니다.  다음 런타임 문제 보다는 컴파일 타임 문제가 있어서 두 경우를 고려 하 여 강제로 합니다.  Api에서 종종 사용 됩니다 여기서 `null` 나타내는 데 사용 됩니다 "없음" 대신에 대해 걱정할 필요가 없도록 `NullReferenceException` 대부분의 경우에서.
+[옵션 종류](language-reference/options.md) 는 두 가지 경우 중 하나를 나타내는 타입이:는 값 또는 전혀 nothing입니다.  값 수 또는 특정 작업으로 발생 하지 않을 수 있는 모든 시나리오에서 사용 됩니다.  다음 런타임 문제 보다는 컴파일 타임 문제가 있어서 두 경우를 고려 하 여 강제로 합니다.  Api에서 종종 사용 됩니다 여기서 `null` 나타내는 데 사용 됩니다 "없음" 대신에 대해 걱정할 필요가 없도록 `NullReferenceException` 대부분의 경우에서.
 
 [!code-fsharp[Options](../../samples/snippets/fsharp/tour.fs#L791-L811)]
 
 ## <a name="units-of-measure"></a>측정 단위
 
-F #의 형식 시스템의 한 가지 고유한 특징 측정 단위를 통해 숫자 리터럴에 대 한 컨텍스트를 제공할 수 있다는 점입니다.
+F #의 타입 시스템의 한 가지 고유한 특징 측정 단위를 통해 숫자 리터럴에 대 한 컨텍스트를 제공할 수 있다는 점입니다.
 
-[측정 단위](language-reference/units-of-measure.md) 미터, 등의 단위를 숫자 유형 연관 시킬 수 있는 함수 작업을 수행 숫자 리터럴을 보다는 단위에 있습니다.  그러면 컴파일러가 특정 컨텍스트에서 의미가에 전달 된 숫자 리터럴 형식, 작업의 종류와 관련 된 런타임 오류 헤드를 확인할 수 있습니다.
+[측정 단위](language-reference/units-of-measure.md) 미터, 등의 단위를 숫자 유형 연관 시킬 수 있는 함수 작업을 수행 숫자 리터럴을 보다는 단위에 있습니다.  그러면 컴파일러가 특정 컨텍스트에서 의미가에 전달 된 숫자 리터럴 타입, 작업의 종류와 관련 된 런타임 오류 헤드를 확인할 수 있습니다.
 
 [!code-fsharp[UnitsOfMeasure](../../samples/snippets/fsharp/tour.fs#L818-L839)]
 
@@ -191,7 +190,7 @@ F #에.NET 클래스에 대 한 완벽 하 게 지원 [인터페이스](language
 
 [!code-fsharp[Classes](../../samples/snippets/fsharp/tour.fs#L912-L931)]
 
-## <a name="which-types-to-use"></a>사용 하는 형식
+## <a name="which-types-to-use"></a>사용 하는 타입
 
 중요 한 질문에 대 한 잠재 고객 클래스, 레코드, 구분 된 공용 구조체 및 튜플의 현재 상태: 하는 언제 사용 하나요?  요소와 마찬가지로 대부분의 수명, 대답 하면 상황에 따라 다릅니다.
 
@@ -201,7 +200,7 @@ F #에.NET 클래스에 대 한 완벽 하 게 지원 [인터페이스](language
 
 구별 된 공용 구조체는 여러 가지 있지만 핵심 장점은 모든 가능한 "셰이프에 대해" 데이터를 가질 수 있는 계정에 패턴 일치와 함께에서를 사용할 수입니다.  
 
-클래스는 엄청난 양의 정보를 나타내고도 기능에 해당 정보를 연결 해야 하는 경우 등의 이유로 적합 합니다.  경험상,으로 개념적으로 일부 데이터에 연결 되어 있는 기능을 사용 하는 경우 클래스 및 개체 지향 프로그래밍의 원칙을 사용 하 여 큰 장점은 합니다.  클래스는 또한 기본 데이터 형식을 C# 및 Visual Basic의 경우와 상호 작용할 때 이러한 언어 클래스를 사용 하 여 거의 모든 항목에 대 한 합니다.
+클래스는 엄청난 양의 정보를 나타내고도 기능에 해당 정보를 연결 해야 하는 경우 등의 이유로 적합 합니다.  경험상,으로 개념적으로 일부 데이터에 연결 되어 있는 기능을 사용 하는 경우 클래스 및 개체 지향 프로그래밍의 원칙을 사용 하 여 큰 장점은 합니다.  클래스는 또한 기본 데이터 타입을 C# 및 Visual Basic의 경우와 상호 작용할 때 이러한 언어 클래스를 사용 하 여 거의 모든 항목에 대 한 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 
